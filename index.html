@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<title> This is my first WebVR demo </title>
+	<script src="https://aframe.io/releases/latest/aframe.min.js">
+	</script>
+</head>
+<body>
+<a-scene>
+	
+
+	<a-camera cursor-visible="true" position="0 2 8">
+	</a-camera>
+
+	<a-sphere id="target" position="-7 4 -3" radious="1" color="black">
+		<a-animation attribute="position" from="-7 4 -3" to="7 4 6" dur="1500" repeat="indefinite">
+		</a-animation>
+	</a-sphere>
+
+	<a-cube look-at="#target" position="-5 2 -2" radius="2" color="#EF2D5E">
+		<a-mouseenter color="blue"></a-mouseenter>
+		<a-mouseenter target="#cyl" scale="3 1" ></a-mouseenter>
+		<a-mouseleave color="EF2D5E"></a-mouseleave>
+		<a-mouseleave target="#cyl" scale="1 1"></mouseleave>
+	</a-cube>
+
+	<a-cube width="3" depth="3" height="3" rotation="0 0 0" position="0 0 -2" >
+	</a-cube>
+
+	<a-cylinder id="cyl" height="6" radius="1" position="5 3 -6">
+	</a-cylinder>
+
+	<a-plane rotation="90 0 0" position="0 0 -3" width-"8" height="8" color="green"></a-plane>
+
+	<a-sky color="lightblue"></a-sky>
+</a-scene>
+
+</body>
+</html>
